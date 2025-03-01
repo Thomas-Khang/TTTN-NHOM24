@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopee Clone</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="top-bar">
+            <div class="left">
+                <a href="usernguoiban.html">Kênh Người Bán</a>
+                <a href="#">Trở thành Người Bán</a>
+                <a href="shipper.html">Kênh người giao hàng</a>
+                
+            </div>
+            <div class="right">
+                <a href="#">Thông Báo</a>
+                <a href="#">Hỗ Trợ</a>
+                <a href="#">Tiếng Việt</a>
+                <a href="#">Đăng Ký</a>
+                <a href="#">Đăng Nhập</a>
+            </div>
+        </div>
+        <div class="nav-bar">
+            <div class="logo">Strawberry</div>
+            <input type="text" placeholder="Strawberry bao ship 0Đ - Đăng ký ngay!">
+            <button>Tìm kiếm</button>
+            <div class="cart">🛒</div>
+        </div>
+    </header>
+
+    <!-- Banner -->
+    <div class="slider">
+        <div class="slides">
+            <!-- Các ảnh banner -->
+            <div class="slide"><img src="hinhanh\poster-giay-den.jpg" alt="Banner 1"></div>
+            <div class="slide"><img src="hinhanh\dior_sauva.png" alt="Banner 2"></div>
+            <div class="slide"><img src="hinhanh\beckham.png" alt="Banner 3"></div>
+            <div class="slide"><img src="hinhanh\puma.jpg" alt="Banner 4"></div>
+        </div>
+
+        <!-- Nút điều hướng -->
+        <button class="prev" onclick="changeSlide(-1)">❮</button>
+        <button class="next" onclick="changeSlide(1)">❯</button>
+    </div>
+
+    <!-- Danh mục -->
+    <div class="categories">
+        <div class="category">Thời Trang Nam</div>
+        <div class="category">Điện Thoại & Phụ Kiện</div>
+        <div class="category">Máy Tính & Laptop</div>
+        <div class="category">Máy Ảnh & Quay Phim</div>
+        <div class="category">Đồng Hồ</div>
+        <div class="category">Giày Dép Nam</div>
+        
+    </div>
+  <!-- Tìm kiếm hàng đầu -->
+  <section class="top-search">
+    <h2>TÌM KIẾM HÀNG ĐẦU</h2>
+    <div class="product-slider">
+        <div class="product">
+            <img src="hinhanh\canvas.jpg" alt="Túi Tote">
+            <p>Bán 12k+ / tháng</p>
+            <h3>Túi Tote Vải Canvas</h3>
+        </div>
+        <div class="product">
+            <img src="hinhanh\balo.jpg" alt="Balo">
+            <p>Bán 3k+ / tháng</p>
+            <h3>Balo Chống Sốc</h3>
+        </div>
+        <div class="product">
+            <img src="hinhanh\day_chuyen.jpg" alt="day chuyen">
+            <p>Bán 57k+ / tháng</p>
+            <h3>Dây chuyền</h3>
+        </div>
+        <div class="product">
+          <img src="hinhanh\goi.jpg" alt="goi hoi">
+          <p>Bán 12k+ / tháng</p>
+          <h3>Gối hơi</h3>
+      </div>
+      <div class="product">
+          <img src="hinhanh\denban.jpg" alt="Balo">
+          <p>Bán 1k+ / tháng</p>
+          <h3>Đèn bàn</h3>
+      </div>
+      <div class="product">
+          <img src="hinhanh\ịphone.jpg" alt="iphone">
+          <p>Bán 5k+ / tháng</p>
+          <h3>Iphone 11</h3>
+      </div>
+    </div>
+</section>
+
+<!-- Gợi ý hôm nay -->
+<section class="suggestions">
+    <h2>GỢI Ý HÔM NAY</h2>
+    <div class="product-grid">
+        <div class="product">
+            <span class="discount">-50%</span>
+            <img src="hinhanh\gaubong.jpg" alt="Gấu Bông">
+            <h3>Gấu Bông Tràm Cảm</h3>
+            <p class="price">₫54.500</p>
+        </div>
+        <div class="product">
+            <span class="discount">-43%</span>
+            <img src="hinhanh\cấpc.jpg" alt="Dây sạc">
+            <h3>Dây Sạc Tự Ngắt</h3>
+            <p class="price">₫15.000</p>
+        </div>
+        <div class="product">
+            <span class="discount">-56%</span>
+            <img src="hinhanh\tainghe.jpg" alt="Tai Nghe">
+            <h3>Tai Nghe Nhét Tai S8</h3>
+            <p class="price">₫56.650</p>
+        </div>
+        <div class="product">
+          <span class="discount">-56%</span>
+          <img src="hinhanh\ss.jpg" alt="samsung">
+          <h3>samsung S8</h3>
+          <p class="price">₫76.650</p>
+      </div>
+    </div>
+</section>
+    <script>
+        // JavaScript để điều khiển việc thay đổi slide
+        let currentSlide = 0;
+
+        function changeSlide(direction) {
+            const slides = document.querySelectorAll('.slide');
+            currentSlide += direction;
+
+            if (currentSlide < 0) {
+                currentSlide = slides.length - 1;
+            } else if (currentSlide >= slides.length) {
+                currentSlide = 0;
+            }
+
+            // Ẩn tất cả các slide và chỉ hiển thị slide hiện tại
+            slides.forEach((slide, index) => {
+                slide.style.display = (index === currentSlide) ? 'block' : 'none';
+            });
+        }
+
+        // Khởi động slide đầu tiên
+        document.addEventListener('DOMContentLoaded', () => {
+            changeSlide(0);
+        });
+    </script>
+</body>
+</html>
